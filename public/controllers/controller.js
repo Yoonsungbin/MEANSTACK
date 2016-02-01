@@ -4,15 +4,21 @@ var myApp = angular.module('myApp',[]);
 myApp.controller('AppCtrl',['$scope','$http',function($scope,$http) {
 	console.log('Hello world controller');
 
+var refresh = function () {
 	$http.get('/personlist').success(function (response) {
 		console.log('Got data from request');
 		$scope.personlist = response;
+		$scope.person ="";
 	});
+};
+
+refresh();
 
 	$scope.addPerson = function (){
 		console.log($scope.person);
-		$http.post('/personlist1',$scope.person).success(function (response){
+		$http.post('/addperson',$scope.person).success(function (response){
 			console.log(response);
+			refresh();
 		});
 	};
 }]);
