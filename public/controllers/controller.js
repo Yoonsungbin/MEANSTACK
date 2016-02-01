@@ -26,7 +26,9 @@ refresh();
 	//remove Btn
 	$scope.remove = function (id) {
 		console.log(id);
-		$http.delete('/deleteperson/' + id);
+		$http.delete('/deleteperson/' + id).success( function (response) {
+			refresh();
+		});
 	};
 }]);
 
