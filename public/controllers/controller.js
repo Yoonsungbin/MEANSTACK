@@ -30,6 +30,13 @@ refresh();
 			refresh();
 		});
 	};
+
+	$scope.edit = function (id) {
+		console.log(id);
+		$http.get('/editperson/'+id ).success ( function (response ){
+			$scope.person = response;
+		})
+	};
 }]);
 
 

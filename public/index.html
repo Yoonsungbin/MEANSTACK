@@ -20,6 +20,7 @@
 					<th>Email</th>
 					<th>Age</th>
 					<th>Action</th>
+					<th>&nbsp;</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -28,12 +29,14 @@
 				<td><input class="form-contorl" ng-model="person.email"></td>
 				<td><input class="form-contorl" ng-model="person.age"></td>
 				<td><button class="btn btn-primary" ng-click="addPerson()">Add Person</td>
+				<td><button class="btn btn-info" ng-click="update(person._id)">Update</button></td>
 			</tr>
 				<tr ng-repeat="person in personlist">
 					<td>{{person.name}}</td>
 					<td>{{person.email}}</td>
 					<td>{{person.age}}</td>
 					<td><button class="btn btn-danger" ng-click="remove(person._id)">Remove</button></td>
+					<td><button class ="btn btn-warning" ng-click="edit(person._id)">Edit</button></td>
 				</tr>
 			</tbody>
 		</table>
