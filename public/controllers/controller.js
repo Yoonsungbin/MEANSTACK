@@ -37,6 +37,17 @@ refresh();
 			$scope.person = response;
 		})
 	};
+
+	$scope.update = function () {
+		console.log($scope.person._id);
+		$http.put('/updateperson/' + $scope.person._id , $scope.person).success ( function (response){
+			refresh();
+		});
+	}
+
+	$scope.deselect = function () {
+		$scope.person = "";
+	}
 }]);
 
 

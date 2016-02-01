@@ -29,7 +29,8 @@
 				<td><input class="form-contorl" ng-model="person.email"></td>
 				<td><input class="form-contorl" ng-model="person.age"></td>
 				<td><button class="btn btn-primary" ng-click="addPerson()">Add Person</td>
-				<td><button class="btn btn-info" ng-click="update(person._id)">Update</button></td>
+				<td><button class="btn btn-info" ng-click="update()">Update</button>&nbsp;&nbsp;
+				<button class="btn btn-info" ng-click="deselect()">Clear</button></td>
 			</tr>
 				<tr ng-repeat="person in personlist">
 					<td>{{person.name}}</td>

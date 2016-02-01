@@ -38,5 +38,14 @@ app.get('/editperson/:id', function (req, res){
 		res.json(doc);
 	});
 });
+
+app.put('/updateperson/:id', function (req, res) {
+	var id = req.params.id;
+	console.log(req.body.name);
+	db.personlist.findAndModify({query: {_id :mongojs.ObjectId(id)},
+		update: {$set: {name:req.body.name,email :req.body.email,age:req.body.age}}, new : true }, function (err,doc) {
+			res.json(doc);
+		});
+});
 app.listen(3000);
 console.log('Server running on port 3000');
