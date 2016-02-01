@@ -4,6 +4,7 @@ var myApp = angular.module('myApp',[]);
 myApp.controller('AppCtrl',['$scope','$http',function($scope,$http) {
 	console.log('Hello world controller');
 
+	$http.get('/personlist')
 
 	person1 = {
 		name : 'Bin',
