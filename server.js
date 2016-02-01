@@ -23,5 +23,9 @@ app.post('/addperson', function (req, res) {
 		});
 });
 
+app.delete('/deleteperson/:id' , function ( req, res ) {
+	var id = req.params.id;
+	console.log(id);
+});
 app.listen(3000);
 console.log('Server running on port 3000');

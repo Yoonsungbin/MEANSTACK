@@ -13,13 +13,20 @@ var refresh = function () {
 };
 
 refresh();
-
+	
+	//addPerson Btn
 	$scope.addPerson = function (){
 		console.log($scope.person);
 		$http.post('/addperson',$scope.person).success(function (response){
 			console.log(response);
 			refresh();
 		});
+	};
+
+	//remove Btn
+	$scope.remove = function (id) {
+		console.log(id);
+		$http.delete('/deleteperson/' + id);
 	};
 }]);
 
